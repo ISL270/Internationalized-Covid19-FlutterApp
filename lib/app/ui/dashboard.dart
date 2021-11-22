@@ -26,8 +26,7 @@ class _DashboardState extends State<Dashboard> {
 
   Future<void> _updateData() async {
     try {
-      final dataRepository =
-          Provider.of<DataRepository>(context, listen: false);
+      final dataRepository = Provider.of<DataRepository>(context, listen: false);
       final endpointsData = await dataRepository.getAllEndpointsData();
       setState(() => _endpointsData = endpointsData);
     } on SocketException catch (_) {
@@ -50,9 +49,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     final formatter = LastUpdatedDateFormatter(
-      lastUpdated: _endpointsData != null
-          ? _endpointsData.values[Endpoint.cases]?.date
-          : null,
+      lastUpdated: _endpointsData != null ? _endpointsData.values[Endpoint.cases]?.date : null,
     );
     return Scaffold(
       appBar: AppBar(
@@ -62,15 +59,16 @@ class _DashboardState extends State<Dashboard> {
         onRefresh: _updateData,
         child: ListView(
           children: <Widget>[
+            SizedBox(
+              height: 10,
+            ),
             LastUpdatedStatusText(
               text: formatter.lastUpdatedStatusText(),
             ),
             for (var endpoint in Endpoint.values)
               EndpointCard(
                 endpoint: endpoint,
-                value: _endpointsData != null
-                    ? _endpointsData.values[endpoint]?.value
-                    : null,
+                value: _endpointsData != null ? _endpointsData.values[endpoint]?.value : null,
               ),
           ],
         ),
