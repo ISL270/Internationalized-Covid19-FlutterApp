@@ -1,17 +1,16 @@
 import 'dart:convert';
-
 import 'package:coronavirus_rest_api_flutter_course/app/services/endpoint_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:coronavirus_rest_api_flutter_course/app/services/api.dart';
 
 class APIService {
-  APIService(this.api);
   final API api;
+  APIService(this.api);
 
   Future<String> getAccessToken() async {
     final response = await http.post(
-      api.tokenUri().toString(),
+      api.tokenUri(),
       headers: {'Authorization': 'Basic ${api.apiKey}'},
     );
     if (response.statusCode == 200) {
@@ -32,7 +31,7 @@ class APIService {
   }) async {
     final uri = api.endpointUri(endpoint);
     final response = await http.get(
-      uri.toString(),
+      uri,
       headers: {'Authorization': 'Bearer $accessToken'},
     );
     if (response.statusCode == 200) {

@@ -1,4 +1,3 @@
-# Used to get an access token given an autorization key
 POST {{baseUrl}}/token
 Authorization: Basic {{authorization}}
 
