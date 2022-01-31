@@ -4,15 +4,16 @@ import 'package:coronavirus_rest_api_flutter_course/app/services/api_service.dar
 import 'package:coronavirus_rest_api_flutter_course/app/services/data_cache_service.dart';
 import 'package:coronavirus_rest_api_flutter_course/app/ui/dashboard.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/date_symbol_data_local.dart';
+import 'package:intl/intl_standalone.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Intl.defaultLocale = 'en_GB';
-  await initializeDateFormatting();
+  await findSystemLocale();
   final sharedPreferences = await SharedPreferences.getInstance();
   runApp(MyApp(sharedPreferences: sharedPreferences));
 }
@@ -21,7 +22,6 @@ class MyApp extends StatelessWidget {
   const MyApp({Key key, @required this.sharedPreferences}) : super(key: key);
   final SharedPreferences sharedPreferences;
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return Provider<DataRepository>(
@@ -33,12 +33,19 @@ class MyApp extends StatelessWidget {
       ),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Coronavirus Tracker',
+        onGenerateTitle: (context) {
+          return AppLocalizations.of(context).app_title;
+        },
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
         theme: ThemeData.light().copyWith(
           appBarTheme: AppBarTheme(
               color: Colors.white,
               titleTextStyle: TextStyle(
-                  color: Color(0xffea4b4b), fontFamily: 'PantonBoldItalic', fontSize: 16)),
+                  color: Color(0xffea4b4b),
+                  fontFamily: 'PantonBoldItalic',
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold)),
           scaffoldBackgroundColor: Color(0xFFF6F6F6),
           cardColor: Color(0xFFFFFFFF),
         ),

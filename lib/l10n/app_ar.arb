@@ -1,0 +1,9 @@
+{
+    "app_title": "متعقب فيروس كورونا",
+    "last_updated": "اخر تحديث",
+    "cases": "الحالات",
+    "suspected_cases": "الحالات المشتبه فيها",
+    "confirmed_cases": "الحالات المؤكدة",
+    "deaths": "الوفيات",
+    "recovered_cases": "الحالات المتعافية"
+}

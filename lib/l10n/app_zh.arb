@@ -1,0 +1,9 @@
+{
+    "app_title": "冠状病毒追踪器",
+    "last_updated": "最近更新时间",
+    "cases": "案例",
+    "suspected_cases": "疑似病例",
+    "confirmed_cases": "确诊病例",
+    "deaths": "死亡人数",
+    "recovered_cases": "康复病例"
+}

@@ -6,6 +6,7 @@ import 'package:coronavirus_rest_api_flutter_course/app/ui/last_updated_status_t
 import 'package:coronavirus_rest_api_flutter_course/app/ui/show_alert_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'dart:io';
 
 class Dashboard extends StatefulWidget {
@@ -26,7 +27,8 @@ class _DashboardState extends State<Dashboard> {
 
   Future<void> _updateData() async {
     try {
-      final dataRepository = Provider.of<DataRepository>(context, listen: false);
+      final dataRepository =
+          Provider.of<DataRepository>(context, listen: false);
       final endpointsData = await dataRepository.getAllEndpointsData();
       setState(() => _endpointsData = endpointsData);
     } on SocketException catch (_) {
@@ -49,11 +51,22 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     final formatter = LastUpdatedDateFormatter(
-      lastUpdated: _endpointsData != null ? _endpointsData.values[Endpoint.cases]?.date : null,
+      lastUpdated: _endpointsData != null
+          ? _endpointsData.values[Endpoint.cases]?.date
+          : null,
     );
     return Scaffold(
       appBar: AppBar(
-        title: Text('Coronavirus Tracker'),
+        title: Text(AppLocalizations.of(context).app_title),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.settings_outlined,
+              color: Color(0xffea4b4b),
+            ),
+            onPressed: () => {},
+          )
+        ],
       ),
       body: RefreshIndicator(
         onRefresh: _updateData,
@@ -63,12 +76,15 @@ class _DashboardState extends State<Dashboard> {
               height: 10,
             ),
             LastUpdatedStatusText(
-              text: formatter.lastUpdatedStatusText(),
+              text: formatter.lastUpdatedStatusText(
+                  AppLocalizations.of(context).last_updated),
             ),
             for (var endpoint in Endpoint.values)
               EndpointCard(
                 endpoint: endpoint,
-                value: _endpointsData != null ? _endpointsData.values[endpoint]?.value : null,
+                value: _endpointsData != null
+                    ? _endpointsData.values[endpoint]?.value
+                    : null,
               ),
           ],
         ),

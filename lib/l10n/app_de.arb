@@ -1,0 +1,9 @@
+{
+    "app_title": "Coronavirus Tracker",
+    "last_updated": "Zuletzt Aktualisiert",
+    "cases": "Fälle",
+    "suspected_cases": "Verdachts Fälle",
+    "confirmed_cases": "Bestätigte Fälle",
+    "deaths": "Todesfälle",
+    "recovered_cases": "Wiederhergestellte Fälle"
+}

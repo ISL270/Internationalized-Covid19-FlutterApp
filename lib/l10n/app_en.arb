@@ -1,0 +1,30 @@
+{
+    "app_title": "Coronavirus Tracker",
+    "@app_title": {
+      "description": "The title displayed in the appBar"
+    },
+    "last_updated": "Last Updated",
+    "@last_updated": {
+      "description": "Time of last update"
+    },
+    "cases": "Cases",
+    "@cases": {
+      "description": "Total amount of cases"
+    },
+    "suspected_cases": "Suspected cases",
+    "@suspected_cases": {
+      "description": "Amount of suspected cases"
+    },
+    "confirmed_cases": "Confirmed cases",
+    "@confirmed_cases": {
+      "description": "Amount of confirmed cases"
+    },
+    "deaths": "Deaths",
+    "@deaths": {
+      "description": "Amount of deaths"
+    },
+    "recovered_cases": "Recovered Cases",
+    "@recovered_cases": {
+      "description": "Amount of recovered cases"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "app_title": "Rastreador De Coronavirus",
+    "last_updated": "Última actualización",
+    "cases": "Casos",
+    "suspected_cases": "Casos Sospechosos",
+    "confirmed_cases": "Casos Confirmados",
+    "deaths": "Fallecidos",
+    "recovered_cases": "Casos Recuperados"
+}

@@ -1,0 +1,9 @@
+{
+    "app_title": "कोरोनावायरस ट्रैकर",
+    "last_updated": "आखरी अपडेट",
+    "cases": "मामलों",
+    "suspected_cases": "संदिग्ध मामले",
+    "confirmed_cases": "वे केस जिनकी पुष्टि हो चुकी है",
+    "deaths": "मौतें",
+    "recovered_cases": "बरामद मामले"
+}
