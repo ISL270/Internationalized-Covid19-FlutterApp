@@ -9,6 +9,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'app/services/globals.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       child: MaterialApp(
+        scaffoldMessengerKey: snackbarKey,
         debugShowCheckedModeBanner: false,
         onGenerateTitle: (context) {
           return AppLocalizations.of(context).app_title;

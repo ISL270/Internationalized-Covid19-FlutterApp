@@ -3,11 +3,11 @@ import 'package:coronavirus_rest_api_flutter_course/app/repositories/endpoints_d
 import 'package:coronavirus_rest_api_flutter_course/app/services/api.dart';
 import 'package:coronavirus_rest_api_flutter_course/app/ui/endpoint_card.dart';
 import 'package:coronavirus_rest_api_flutter_course/app/ui/last_updated_status_text.dart';
-import 'package:coronavirus_rest_api_flutter_course/app/ui/show_alert_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'dart:io';
+import '../services/globals.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -31,20 +31,15 @@ class _DashboardState extends State<Dashboard> {
           Provider.of<DataRepository>(context, listen: false);
       final endpointsData = await dataRepository.getAllEndpointsData();
       setState(() => _endpointsData = endpointsData);
-    } on SocketException catch (_) {
-      showAlertDialog(
-        context: context,
-        title: 'Connection Error',
-        content: 'Could not retrieve data. Please try again later.',
-        defaultActionText: 'OK',
-      );
-    } catch (_) {
-      showAlertDialog(
-        context: context,
-        title: 'Unknown Error',
-        content: 'Please contact support or try again later.',
-        defaultActionText: 'OK',
-      );
+    } on SocketException {
+      snackbarKey.currentState
+          ?.showSnackBar(SnackBar(content: Text("No Internet connection!")));
+    } on HttpException {
+      snackbarKey.currentState?.showSnackBar(
+          SnackBar(content: Text("Couldn't find the requested data!")));
+    } on FormatException {
+      snackbarKey.currentState
+          ?.showSnackBar(SnackBar(content: Text("Bad response format!")));
     }
   }
 

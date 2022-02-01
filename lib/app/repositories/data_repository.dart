@@ -25,7 +25,6 @@ class DataRepository {
     final endpointsData = await _getDataRefreshingToken<EndpointsData>(
       onGetData: _getAllEndpointsData,
     );
-    // save to cache
     await dataCacheService.setData(endpointsData);
     return endpointsData;
   }
@@ -37,7 +36,6 @@ class DataRepository {
       }
       return await onGetData();
     } on Response catch (response) {
-      // if unauthorized, get access token again
       if (response.statusCode == 401) {
         _accessToken = await apiService.getAccessToken();
         return await onGetData();
