@@ -1,4 +1,4 @@
-import 'package:coronavirus_rest_api_flutter_course/app/services/api.dart';
+import '/services/api.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

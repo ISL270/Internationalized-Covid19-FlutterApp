@@ -1,8 +1,8 @@
-import 'package:coronavirus_rest_api_flutter_course/app/repositories/data_repository.dart';
-import 'package:coronavirus_rest_api_flutter_course/app/repositories/endpoints_data.dart';
-import 'package:coronavirus_rest_api_flutter_course/app/services/api.dart';
-import 'package:coronavirus_rest_api_flutter_course/app/ui/endpoint_card.dart';
-import 'package:coronavirus_rest_api_flutter_course/app/ui/last_updated_status_text.dart';
+import '/repositories/data_repository.dart';
+import '/repositories/endpoints_data.dart';
+import '/services/api.dart';
+import '/ui_widgets/endpoint_card.dart';
+import '/ui_widgets/last_updated_status_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -10,6 +10,8 @@ import 'dart:io';
 import '../services/globals.dart';
 
 class Dashboard extends StatefulWidget {
+  const Dashboard({Key key}) : super(key: key);
+
   @override
   _DashboardState createState() => _DashboardState();
 }
@@ -59,7 +61,7 @@ class _DashboardState extends State<Dashboard> {
               Icons.settings_outlined,
               color: Color(0xffea4b4b),
             ),
-            onPressed: () => {},
+            onPressed: () => {Navigator.pushNamed(context, '/settings')},
           )
         ],
       ),

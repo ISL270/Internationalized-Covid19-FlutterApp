@@ -1,6 +1,6 @@
-import 'package:coronavirus_rest_api_flutter_course/app/repositories/endpoints_data.dart';
-import 'package:coronavirus_rest_api_flutter_course/app/services/api.dart';
-import 'package:coronavirus_rest_api_flutter_course/app/services/endpoint_data.dart';
+import '/repositories/endpoints_data.dart';
+import '/services/api.dart';
+import '/services/endpoint_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

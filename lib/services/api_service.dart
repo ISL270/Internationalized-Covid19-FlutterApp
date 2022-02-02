@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:coronavirus_rest_api_flutter_course/app/services/endpoint_data.dart';
+import '/services/endpoint_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:coronavirus_rest_api_flutter_course/app/services/api.dart';
+import '/services/api.dart';
 import '../services/globals.dart';
 
 class APIService {

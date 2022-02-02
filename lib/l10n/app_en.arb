@@ -1,7 +1,11 @@
 {
     "app_title": "Coronavirus Tracker",
     "@app_title": {
-      "description": "The title displayed in the appBar"
+      "description": "The title displayed in the home screen appBar"
+    },
+    "settings_title": "Settings",
+    "@settings_title": {
+      "description": "The title displayed in the settings screen appBar"
     },
     "last_updated": "Last Updated",
     "@last_updated": {

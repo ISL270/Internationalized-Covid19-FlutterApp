@@ -1,5 +1,6 @@
 {
     "app_title": "冠状病毒追踪器",
+    "settings_title": "设置",
     "last_updated": "最近更新时间",
     "cases": "案例",
     "suspected_cases": "疑似病例",

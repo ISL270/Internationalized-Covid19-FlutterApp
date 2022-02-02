@@ -1,5 +1,5 @@
-import 'package:coronavirus_rest_api_flutter_course/app/services/api.dart';
-import 'package:coronavirus_rest_api_flutter_course/app/services/endpoint_data.dart';
+import '/services/api.dart';
+import '/services/endpoint_data.dart';
 import 'package:flutter/foundation.dart';
 
 class EndpointsData {

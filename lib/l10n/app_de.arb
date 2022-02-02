@@ -1,5 +1,6 @@
 {
     "app_title": "Coronavirus Tracker",
+    "settings_title": "Einstellungen",
     "last_updated": "Zuletzt Aktualisiert",
     "cases": "Fälle",
     "suspected_cases": "Verdachts Fälle",
