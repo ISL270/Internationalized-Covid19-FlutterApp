@@ -1,6 +1,8 @@
 {
     "app_title": "متعقب فيروس كورونا",
     "settings_title": "الاعدادات",
+    "language": "اللغة",
+    "theme": "المظهر",
     "last_updated": "اخر تحديث",
     "cases": "الحالات",
     "suspected_cases": "الحالات المشتبه فيها",

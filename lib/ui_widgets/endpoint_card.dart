@@ -49,14 +49,8 @@ class EndpointCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text(
-                cardData.title,
-                style: Theme.of(context).textTheme.headline5.copyWith(
-                    color: Color(0xff656565),
-                    fontSize: 16,
-                    fontFamily: 'PantonBoldItalic',
-                    fontWeight: FontWeight.bold),
-              ),
+              Text(cardData.title,
+                  style: Theme.of(context).textTheme.headline5),
               SizedBox(height: 2),
               Divider(
                 thickness: 1,
@@ -69,16 +63,11 @@ class EndpointCard extends StatelessWidget {
                   children: <Widget>[
                     Image.asset(
                       cardData.assetName,
-                      color: Color(0xffea4b4b),
+                      color: Theme.of(context).textTheme.headline4.color,
                       height: 37,
                     ),
-                    Text(
-                      formattedValue,
-                      style: Theme.of(context).textTheme.headline4.copyWith(
-                          color: Color(0xffea4b4b),
-                          fontWeight: FontWeight.w300,
-                          fontSize: 28),
-                    ),
+                    Text(formattedValue,
+                        style: Theme.of(context).textTheme.headline4),
                   ],
                 ),
               ),

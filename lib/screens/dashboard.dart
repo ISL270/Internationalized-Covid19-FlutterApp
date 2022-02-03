@@ -59,7 +59,6 @@ class _DashboardState extends State<Dashboard> {
           IconButton(
             icon: Icon(
               Icons.settings_outlined,
-              color: Color(0xffea4b4b),
             ),
             onPressed: () => {Navigator.pushNamed(context, '/settings')},
           )

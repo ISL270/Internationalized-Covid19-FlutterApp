@@ -24,7 +24,7 @@ class LastUpdatedStatusText extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Text(
         text,
-        style: TextStyle(color: Color(0xff656565)),
+        style: Theme.of(context).textTheme.headline3,
         textAlign: TextAlign.center,
       ),
     );

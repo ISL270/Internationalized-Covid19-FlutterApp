@@ -1,6 +1,8 @@
 {
     "app_title": "Rastreador De Coronavirus",
     "settings_title": "Ajustes",
+    "language": "Idioma",
+    "theme": "Tema",
     "last_updated": "Última actualización",
     "cases": "Casos",
     "suspected_cases": "Casos Sospechosos",

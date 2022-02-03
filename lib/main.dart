@@ -11,6 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'services/globals.dart';
 import 'providers/locale_provider.dart';
+import 'providers/theme_provider.dart';
 import 'screens/settings.dart';
 
 void main() async {
@@ -36,10 +37,12 @@ class MyApp extends StatelessWidget {
                       sharedPreferences: sharedPreferences,
                     ),
                   )),
-          ChangeNotifierProvider(create: (context) => LocaleProvider())
+          ChangeNotifierProvider(create: (context) => LocaleProvider()),
+          ChangeNotifierProvider(create: (context) => ThemeProvider())
         ],
         builder: (context, child) {
-          final provider = Provider.of<LocaleProvider>(context);
+          final localeProvider = Provider.of<LocaleProvider>(context);
+          final themeProvider = Provider.of<ThemeProvider>(context);
 
           return MaterialApp(
             scaffoldMessengerKey: snackbarKey,
@@ -49,19 +52,10 @@ class MyApp extends StatelessWidget {
             },
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            locale: provider.locale,
-            theme: ThemeData.light().copyWith(
-              appBarTheme: AppBarTheme(
-                  iconTheme: IconThemeData(color: Color(0xffea4b4b)),
-                  color: Colors.white,
-                  titleTextStyle: TextStyle(
-                      color: Color(0xffea4b4b),
-                      fontFamily: 'PantonBoldItalic',
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold)),
-              scaffoldBackgroundColor: Color(0xFFF6F6F6),
-              cardColor: Color(0xFFFFFFFF),
-            ),
+            locale: localeProvider.locale,
+            themeMode: themeProvider.themeMode,
+            theme: MyThemes.lightTheme,
+            darkTheme: MyThemes.darkTheme,
             routes: {
               '/dashboard': (context) => const Dashboard(),
               '/settings': (context) => const Settings(),

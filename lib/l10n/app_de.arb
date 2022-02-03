@@ -1,6 +1,8 @@
 {
     "app_title": "Coronavirus Tracker",
     "settings_title": "Einstellungen",
+    "language": "Sprache",
+    "theme": "Thema",
     "last_updated": "Zuletzt Aktualisiert",
     "cases": "Fälle",
     "suspected_cases": "Verdachts Fälle",

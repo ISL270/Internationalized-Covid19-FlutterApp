@@ -7,6 +7,14 @@
     "@settings_title": {
       "description": "The title displayed in the settings screen appBar"
     },
+    "language": "Language",
+    "@language": {
+      "description": "Displayed above the languages dropdown"
+    },
+    "theme": "Theme",
+    "@theme": {
+      "description": "Displayed before the theme switch button"
+    },
     "last_updated": "Last Updated",
     "@last_updated": {
       "description": "Time of last update"
