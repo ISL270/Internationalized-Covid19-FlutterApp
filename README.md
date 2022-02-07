@@ -18,5 +18,5 @@ The app automatically matches the language with the device's locale, but users a
 
 ## Preview
 <p align="center"> 
-<img src="https://user-images.githubusercontent.com/32794378/142869213-cb1bd144-8063-4152-9bd1-aa14eb1ffce0.png" alt="Logo" width="300">
+<img src="/previewGIF.gif" alt="Logo" width="40%">
 </p>
