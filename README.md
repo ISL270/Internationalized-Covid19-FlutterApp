@@ -18,5 +18,5 @@ The app automatically matches the language with the device's locale, but users a
 
 ## Preview
 <p align="center"> 
-<img src="/previewGIF.gif" alt="Logo" width="40%">
+<img src="/previewGIF.gif" alt="Logo" width="60%">
 </p>
